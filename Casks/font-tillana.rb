@@ -3,14 +3,18 @@ cask 'font-tillana' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/tillana',
+      using:      :svn,
+      trust_cert: true
   name 'Tillana'
   homepage 'https://fonts.google.com/specimen/Tillana'
 
-  font 'ofl/tillana/Tillana-Bold.ttf'
-  font 'ofl/tillana/Tillana-ExtraBold.ttf'
-  font 'ofl/tillana/Tillana-Medium.ttf'
-  font 'ofl/tillana/Tillana-Regular.ttf'
-  font 'ofl/tillana/Tillana-SemiBold.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'Tillana-Bold.ttf'
+  font 'Tillana-ExtraBold.ttf'
+  font 'Tillana-Medium.ttf'
+  font 'Tillana-Regular.ttf'
+  font 'Tillana-SemiBold.ttf'
 end

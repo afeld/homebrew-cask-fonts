@@ -3,15 +3,19 @@ cask 'font-maitree' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/maitree',
+      using:      :svn,
+      trust_cert: true
   name 'Maitree'
   homepage 'https://fonts.google.com/specimen/Maitree'
 
-  font 'ofl/maitree/Maitree-Bold.ttf'
-  font 'ofl/maitree/Maitree-ExtraLight.ttf'
-  font 'ofl/maitree/Maitree-Light.ttf'
-  font 'ofl/maitree/Maitree-Medium.ttf'
-  font 'ofl/maitree/Maitree-Regular.ttf'
-  font 'ofl/maitree/Maitree-SemiBold.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'Maitree-Bold.ttf'
+  font 'Maitree-ExtraLight.ttf'
+  font 'Maitree-Light.ttf'
+  font 'Maitree-Medium.ttf'
+  font 'Maitree-Regular.ttf'
+  font 'Maitree-SemiBold.ttf'
 end

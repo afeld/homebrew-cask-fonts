@@ -3,17 +3,21 @@ cask 'font-asap-condensed' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/asapcondensed',
+      using:      :svn,
+      trust_cert: true
   name 'Asap Condensed'
   homepage 'https://fonts.google.com/specimen/Asap+Condensed'
 
-  font 'ofl/asapcondensed/AsapCondensed-Bold.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-BoldItalic.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-Italic.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-Medium.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-MediumItalic.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-Regular.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-SemiBold.ttf'
-  font 'ofl/asapcondensed/AsapCondensed-SemiBoldItalic.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'AsapCondensed-Bold.ttf'
+  font 'AsapCondensed-BoldItalic.ttf'
+  font 'AsapCondensed-Italic.ttf'
+  font 'AsapCondensed-Medium.ttf'
+  font 'AsapCondensed-MediumItalic.ttf'
+  font 'AsapCondensed-Regular.ttf'
+  font 'AsapCondensed-SemiBold.ttf'
+  font 'AsapCondensed-SemiBoldItalic.ttf'
 end

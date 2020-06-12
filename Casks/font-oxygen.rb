@@ -3,12 +3,16 @@ cask 'font-oxygen' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/oxygen',
+      using:      :svn,
+      trust_cert: true
   name 'Oxygen'
   homepage 'https://fonts.google.com/specimen/Oxygen'
 
-  font 'ofl/oxygen/Oxygen-Bold.ttf'
-  font 'ofl/oxygen/Oxygen-Light.ttf'
-  font 'ofl/oxygen/Oxygen-Regular.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'Oxygen-Bold.ttf'
+  font 'Oxygen-Light.ttf'
+  font 'Oxygen-Regular.ttf'
 end

@@ -3,15 +3,19 @@ cask 'font-inria-sans' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/inriasans',
+      using:      :svn,
+      trust_cert: true
   name 'Inria Sans'
   homepage 'https://fonts.google.com/specimen/Inria+Sans'
 
-  font 'ofl/inriasans/InriaSans-Bold.ttf'
-  font 'ofl/inriasans/InriaSans-BoldItalic.ttf'
-  font 'ofl/inriasans/InriaSans-Italic.ttf'
-  font 'ofl/inriasans/InriaSans-Light.ttf'
-  font 'ofl/inriasans/InriaSans-LightItalic.ttf'
-  font 'ofl/inriasans/InriaSans-Regular.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'InriaSans-Bold.ttf'
+  font 'InriaSans-BoldItalic.ttf'
+  font 'InriaSans-Italic.ttf'
+  font 'InriaSans-Light.ttf'
+  font 'InriaSans-LightItalic.ttf'
+  font 'InriaSans-Regular.ttf'
 end

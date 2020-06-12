@@ -3,11 +3,15 @@ cask 'font-delius-unicase' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/deliusunicase',
+      using:      :svn,
+      trust_cert: true
   name 'Delius Unicase'
   homepage 'https://fonts.google.com/specimen/Delius+Unicase'
 
-  font 'ofl/deliusunicase/DeliusUnicase-Bold.ttf'
-  font 'ofl/deliusunicase/DeliusUnicase-Regular.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'DeliusUnicase-Bold.ttf'
+  font 'DeliusUnicase-Regular.ttf'
 end

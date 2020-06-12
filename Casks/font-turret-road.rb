@@ -3,15 +3,19 @@ cask 'font-turret-road' do
   version :latest
   sha256 :no_check
 
-  # github.com/google/fonts was verified as official when first introduced to the cask
-  url 'https://github.com/google/fonts.git'
+  # github.com/google/fonts/ was verified as official when first introduced to the cask
+  url 'https://github.com/google/fonts/trunk/ofl/turretroad',
+      using:      :svn,
+      trust_cert: true
   name 'Turret Road'
   homepage 'https://fonts.google.com/specimen/Turret+Road'
 
-  font 'ofl/turretroad/TurretRoad-Bold.ttf'
-  font 'ofl/turretroad/TurretRoad-ExtraBold.ttf'
-  font 'ofl/turretroad/TurretRoad-ExtraLight.ttf'
-  font 'ofl/turretroad/TurretRoad-Light.ttf'
-  font 'ofl/turretroad/TurretRoad-Medium.ttf'
-  font 'ofl/turretroad/TurretRoad-Regular.ttf'
+  depends_on macos: '>= :sierra'
+
+  font 'TurretRoad-Bold.ttf'
+  font 'TurretRoad-ExtraBold.ttf'
+  font 'TurretRoad-ExtraLight.ttf'
+  font 'TurretRoad-Light.ttf'
+  font 'TurretRoad-Medium.ttf'
+  font 'TurretRoad-Regular.ttf'
 end
